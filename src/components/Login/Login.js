@@ -1,30 +1,41 @@
 import React from "react";
 import { Form } from "react-bootstrap";
+import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { Link, useNavigate } from "react-router-dom";
+import auth from "../../firebase.init";
 import "./Login.css";
 
 const Login = () => {
+  const navigate = useNavigate();
 
-          const navigate = useNavigate()
+  const [signInWithEmailAndPassword, user, loading, error] =
+    useSignInWithEmailAndPassword(auth);
 
-          const registerNavigate=()=>{
-                    navigate("/registration")
+  const loginHandler = (event) => {
+    event.preventDefault();
+    const email = event.target.email.value;
+    const password = event.target.password.value;
+    signInWithEmailAndPassword(email, password);
+    navigate('/')
+  };
 
-
-          }
+  const registerNavigate = () => {
+    navigate("/registration");
+  };
   return (
     <div className="container">
       <h1 className="text-center my-4"> Login</h1>
       <div className="row g-4 my-5">
         <div className="col-md-6 col-lg-6   ">
           <div className="p-3   text-light    bg-dark">
-            <Form>
+            <Form onSubmit={loginHandler}>
               <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label>Email address</Form.Label>
                 <Form.Control
                   type="email"
                   placeholder="Enter email"
-                  name="email" required
+                  name="email"
+                  required
                 />
               </Form.Group>
 
@@ -56,7 +67,8 @@ const Login = () => {
                 <button className="btn btn-info  ">
                   {" "}
                   <Link
-                    to="/registration" onClick={registerNavigate}
+                    to="/registration"
+                    onClick={registerNavigate}
                     className="text-center   text-decoration-none  "
                   >
                     Please Register
