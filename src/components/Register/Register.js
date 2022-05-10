@@ -75,24 +75,24 @@ const Register = () => {
         </div>
 
         <div className="  col-12 col-sm-12 col-md-6 col-lg-6  ">
-        <div className=" login  ">
+        <div className=" login   ">
          
             <img
-              src="https://img.freepik.com/free-photo/wooden-spoon-filled-with-pills-stethoscope_23-2148439036.jpg?size=626&ext=jpg&ga=GA1.1.1622403396.1642791622"
+              src="https://images.unsplash.com/photo-1585435557343-3b092031a831?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
               className="d-block    img-thumbnail   img-fluid"
               alt="..."
                
             />
             <div className="text  ">
               
-              <p className="text-center  text-dark mt-2 rounded">
+              <div className="text-center  text-dark mt-2 rounded">
         Already account?
-      <button className="btn btn-info  ">  <Link onClick={loginNavigate}
+      <button className="btn btn-dark  ">  <Link onClick={loginNavigate}
           to="/login"
-          className="text-center   text-decoration-none  " >
+          className="text-center text-light  text-decoration-none  " >
           Please Login
         </Link></button>
-      </p>
+      </div>
             </div>
          
           </div>

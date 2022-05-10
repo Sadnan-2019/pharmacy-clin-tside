@@ -1,9 +1,9 @@
 .text{
 
           position: absolute;
-          top: 80%;
+          top: 60%;
           left: 50%;
-          font-size: 30px;
+          font-size: 25px;
           
           transform: translate(-50%, -50%);
         }
