@@ -53,7 +53,7 @@ const ManageDetails = ({ inventory }) => {
             <td>{suppliername}</td>
             <td>{shortdescription}</td>
             <td>
-              <img src={img} alt="" />
+              <img className="img-fluid w-25" src={img} alt="" />
             </td>
             <td>
               <button

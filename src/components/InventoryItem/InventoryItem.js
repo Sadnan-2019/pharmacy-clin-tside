@@ -23,7 +23,7 @@ const InventoryItem = ({ inventory }) => {
             <td>{suppliername}</td>
             <td>{shortdescription}</td>
             <td>
-              <img src={img} alt="" />
+              <img className="w-25 img-fluid" src={img} alt="" />
             </td>
             <td>
               {" "}
