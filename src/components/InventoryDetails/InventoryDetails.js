@@ -10,6 +10,10 @@ const InventoryDetails = () => {
       .then((res) => res.json())
       .then((data) => setInventory(data));
   }, []);
+  const handleDelivered=()=>{
+
+    console.log("ow click")
+  }
 
   return (
     <div>
@@ -31,8 +35,10 @@ const InventoryDetails = () => {
                     Shortdescription: {inventory.shortdescription}
                   </h6>
                 </div>
-                <div className="card-footer">
-                  <button className="btn btn-info">Delivered</button>
+                <div className="card-footer bg-dark d-flex  ">
+                  <p className="text-light">Please click the button for delivered</p><br></br>
+                  
+                  <button className="btn btn-info ms-3" onClick={handleDelivered()} >Delivered</button>
                 </div>
               </div>
               <div className="  ms-5 bg-dark text-light   p-4  ">

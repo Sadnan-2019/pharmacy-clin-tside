@@ -46,7 +46,7 @@ const Header = () => {
               <Nav.Link as={Link} to="/add-iteam" className="text-light">
                 Add Iteam
               </Nav.Link>
-              <Nav.Link href="#deets" className="text-light">
+              <Nav.Link  as={Link} to="/manage-iteam" className="text-light">
                 Manage Iteam
               </Nav.Link>
 
