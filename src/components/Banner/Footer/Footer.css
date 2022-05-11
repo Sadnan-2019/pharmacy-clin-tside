@@ -1,17 +1,10 @@
-.footer{
-
-          height: 100px;
-          bottom: 0;
-          position: absolute;
-          width: 100%;
-          top: 100px;
-         
-           
+.footer {
+  height: 100px;
+  bottom: 0;
+  position: absolute;
+  width: 100%;
+  top: 100px;
 }
-.footer-parent{
-          position: relative;
-          
-        
-
-        
+.footer-parent {
+  position: relative;
 }

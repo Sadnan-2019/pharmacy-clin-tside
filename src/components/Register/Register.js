@@ -1,36 +1,30 @@
 import React from "react";
 import { Button, Form } from "react-bootstrap";
 import { Link, useNavigate } from "react-router-dom";
-import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
 
 import auth from "../../firebase.init";
-import './Register.css'
+import "./Register.css";
 
 const Register = () => {
-          const [
-                    createUserWithEmailAndPassword,
-                    user,
-                    loading,
-                    error,
-                  ] = useCreateUserWithEmailAndPassword(auth,{sendEmailVerification:true});
-          const navigate = useNavigate();
+  const [createUserWithEmailAndPassword, user, loading, error] =
+    useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
+  const navigate = useNavigate();
 
-          const registerHandler=(event)=>{
-
-                    event.preventDefault();
-                    const name = event.target.name.value;
+  const registerHandler = (event) => {
+    event.preventDefault();
+    const name = event.target.name.value;
     const email = event.target.email.value;
     const password = event.target.password.value;
     createUserWithEmailAndPassword(email, password);
-    event.target.reset()
-    navigate("/")
-          }
-         
+    console.log(email, password,name);
+    event.target.reset();
+    navigate("/");
+  };
 
-          const loginNavigate=()=>{
-                    navigate("/login");
-
-          }
+  const loginNavigate = () => {
+    navigate("/login");
+  };
   return (
     <div className="container">
       <h1 className="text-center my-4"> Registration</h1>
@@ -68,33 +62,32 @@ const Register = () => {
               </Form.Group>
 
               <input className=" btn btn-info" type="submit" value="Register" />
-
-              
             </Form>
           </div>
         </div>
 
         <div className="  col-12 col-sm-12 col-md-6 col-lg-6  ">
-        <div className=" login   ">
-         
+          <div className=" login   ">
             <img
               src="https://images.unsplash.com/photo-1585435557343-3b092031a831?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
               className="d-block    img-thumbnail   img-fluid"
               alt="..."
-               
             />
             <div className="text  ">
-              
               <div className="text-center  text-dark mt-2 rounded">
-        Already account?
-      <button className="btn btn-dark  ">  <Link onClick={loginNavigate}
-          to="/login"
-          className="text-center text-light  text-decoration-none  " >
-          Please Login
-        </Link></button>
-      </div>
+                Already account?
+                <button className="btn btn-dark  ">
+                  {" "}
+                  <Link
+                    onClick={loginNavigate}
+                    to="/login"
+                    className="text-center text-light  text-decoration-none  "
+                  >
+                    Please Login
+                  </Link>
+                </button>
+              </div>
             </div>
-         
           </div>
         </div>
       </div>

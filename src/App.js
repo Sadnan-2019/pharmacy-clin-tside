@@ -7,6 +7,7 @@ import { Route, Router, Routes } from 'react-router-dom';
 import Register from './components/Register/Register';
 import Login from './components/Login/Login';
 import InventoryDetails from './components/InventoryDetails/InventoryDetails';
+import AddItem from './components/AddItem/AddItem';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
        <Route path="/registration" element={<Register/>}></Route>
        <Route path="/login" element={<Login/>}></Route>
        <Route path="/" element={<Home/>}></Route>
+       <Route path="/add-iteam" element={<AddItem/>}></Route>
        <Route path="/inventory/:inventoryID" element={<InventoryDetails/>}></Route>
 
        

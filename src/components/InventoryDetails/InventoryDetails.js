@@ -14,29 +14,41 @@ const InventoryDetails = () => {
   return (
     <div>
       <div className="container">
-        <div class="row g-4 my-5">
-          <div class="col-md-6 col-lg-6   ">
-            <div class="p-3   text-light    bg-dark">
-              <p>ID:{inventoryID}</p>
-              <p>Name:{inventory.name}</p>
-              <p>Quantity:{inventory.quantity}</p>
-              <p>Price:{inventory.price}</p>
-              
-            </div>
-          </div>
-
-          <div class="col-md-6 col-lg-6 text-light">
-            <div class="p-3     ">
-              <img src={inventory.img} alt="" className="img-fluid" />
-            </div>
-          </div>
-        </div>
-      </div>
-
- 
         
-
-          
+          <h4 className="text-center">Iteam Details</h4>
+          <div className="row row-cols-1 row-cols-md-2     g-4">
+            <div className="col w-100 d-flex justify-content-center  align-items-center">
+              <div className="card h-100">
+                <img src={inventory.img} alt="..." className="p-4" />
+                <div className="card-body">
+                  <h5 className="card-title">Name: {inventory.name}</h5>
+                  <h6 className="card-text">Quantity: {inventory.quantity}</h6>
+                  <h6 className="card-text">Price: ${inventory.price}</h6>
+                  <h6 className="card-text">
+                    Suppliername: {inventory.suppliername}
+                  </h6>
+                  <h6 className="card-text">
+                    Shortdescription: {inventory.shortdescription}
+                  </h6>
+                </div>
+                <div className="card-footer">
+                  <button className="btn btn-info">Delivered</button>
+                </div>
+              </div>
+              <div className="  ms-5 bg-dark text-light   p-4  ">
+                <p>If you want add quantity?Please Add</p>
+                <input
+                  type="text"
+                  className="form-control"
+                  placeholder="Quantity"
+                  name="quantity"
+                />
+                <button className="btn btn-info mt-4 mb-2">Add Quantity</button>
+              </div>
+            </div>
+          </div>
+        
+      </div>
     </div>
   );
 };
