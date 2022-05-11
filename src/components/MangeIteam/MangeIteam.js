@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { Table } from "react-bootstrap";
+import useManage from "../../hooks/useManage";
 import ManageDetails from "../ManageDetails/ManageDetails";
 
 const MangeIteam = () => {
-  const [manages, setManage] = useState([]);
+  const [manages, setManage] = useManage();
   useEffect(() => {
     fetch(`http://localhost:5000/inventory`)
       .then((res) => res.json())

@@ -17,7 +17,7 @@ const Register = () => {
     const email = event.target.email.value;
     const password = event.target.password.value;
     createUserWithEmailAndPassword(email, password);
-    console.log(email, password,name);
+    // console.log(email, password,name);
     event.target.reset();
     navigate("/");
   };

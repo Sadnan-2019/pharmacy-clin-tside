@@ -25,36 +25,41 @@ const AddItem = () => {
         <input
           {...register("name")}
           className="form-control mt-2 mb-2"
-          placeholder="name"
+          placeholder="name" required
         />
         <input
           {...register("quantity")}
           className="form-control mb-2"
           placeholder="quantity"
+          required
         />
         <input
           type="number"
           {...register("price")}
           className="form-control mb-2"
           placeholder="price"
+          required
         />
         <input
           type="text"
           {...register("suppliername")}
           className="form-control mb-2"
           placeholder="supplier-name"
+          required
         />
         <input
           type="text"
           {...register("shortdescription")}
           className="form-control mb-2"
           placeholder="short-description"
+          required
         />
         <input
           type="text"
           {...register("img")}
           className="form-control mb-2"
           placeholder="photo-url"
+          required
         />
         <input className="btn btn-info" type="submit" />
       </form>

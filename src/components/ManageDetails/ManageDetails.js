@@ -1,20 +1,21 @@
 import React, { useEffect, useState } from "react";
 import { Table } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
+import useManage from "../../hooks/useManage";
 
 const ManageDetails = ({ inventory }) => {
-  const [inventorys, setInventory] = useState([]);
-  //   console.log(inventorys)
+  const [inventorys, setInventory] = useManage([]);
+    // console.log(inventorys)
   const { _id, name, price, img, quantity, suppliername, shortdescription } =
     inventory;
 
   const navigate = useNavigate();
 
-  useEffect(() => {
-    fetch(`http://localhost:5000/inventory`)
-      .then((res) => res.json())
-      .then((data) => setInventory(data));
-  }, []);
+  // useEffect(() => {
+  //   fetch(`http://localhost:5000/inventory`)
+  //     .then((res) => res.json())
+  //     .then((data) => setInventory(data));
+  // }, [ ]);
 
   const navigateInventoryDetail = (id) => {
     navigate(`/inventory/${id}`);
@@ -35,8 +36,9 @@ const ManageDetails = ({ inventory }) => {
               (inventory) => inventory._id !== id
             );
             setInventory(deleteIteam);
+            console.log(deleteIteam)
           }
-          console.log(data);
+          // console.log(data);
         });
     }
   };
