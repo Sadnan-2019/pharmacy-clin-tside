@@ -16,8 +16,8 @@ const InventoryDetails = () => {
       <div className="container">
         
           <h4 className="text-center">Iteam Details</h4>
-          <div className="row row-cols-1 row-cols-md-2     g-4">
-            <div className="col w-100 d-flex justify-content-center  align-items-center">
+          <div className="row row-cols-1 row-cols-md-1     g-4">
+            <div className="col  d-flex justify-content-center  align-items-center">
               <div className="card h-100">
                 <img src={inventory.img} alt="..." className="p-4" />
                 <div className="card-body">

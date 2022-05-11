@@ -4,6 +4,7 @@ import InventoryItem from "../InventoryItem/InventoryItem";
 
 const Inventory = () => {
   const [inventorys, setInventory] = useState([]);
+  const datas =inventorys.slice(0,6);
 
   useEffect(() => {
     fetch(`http://localhost:5000/inventory`)
@@ -34,7 +35,7 @@ const Inventory = () => {
    
 
  
-{inventorys.map((inventory) => (
+{datas.map((inventory) => (
         <InventoryItem key={inventory._id} inventory={inventory}></InventoryItem>
       ))}
  
