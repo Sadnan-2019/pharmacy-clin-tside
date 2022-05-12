@@ -49,6 +49,9 @@ const Header = () => {
               <Nav.Link  as={Link} to="/manage-iteam" className="text-light">
                 Manage Iteam
               </Nav.Link>
+              <Nav.Link  as={Link} to="/my-item" className="text-light">
+                My Iteam
+              </Nav.Link>
 
               <div className="me-2 d-flex align-items-center">
                 <span className="text-light">{user ? user?.email : ""}</span>

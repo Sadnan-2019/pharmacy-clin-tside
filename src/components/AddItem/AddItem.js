@@ -1,22 +1,42 @@
 import React from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
+import auth from "../../firebase.init";
 
 const AddItem = () => {
+  const [user] = useAuthState(auth);
+  // const cuRentUser =user?.email;
+  // console.log(cuRentUser);
+
   const { register, handleSubmit } = useForm();
-  const onSubmit = (data) => {
-    console.log(data);
+  const onSubmit = (data, e) => {
+    e.target.reset();
+    // const InventoryUser ={
+
+    //   current:cuRentUser
+    // }
+    
+    const userID = user?.email;
+    const product = {
+      ...data,userID
+    }
+    console.log(product)
+
+    
+    // console.log(data);
     const url = `http://localhost:5000/inventory`;
     fetch(url, {
       method: "POST",
       headers: {
         "content-type": "application/json",
       },
-      body: JSON.stringify(data),
+      body: JSON.stringify(product),
     })
       .then((res) => res.json())
       .then((result) => {
         console.log(result);
       });
+    data.target.reset();
   };
   return (
     <div>
@@ -25,7 +45,8 @@ const AddItem = () => {
         <input
           {...register("name")}
           className="form-control mt-2 mb-2"
-          placeholder="name" required
+          placeholder="name"
+          required
         />
         <input
           {...register("quantity")}
