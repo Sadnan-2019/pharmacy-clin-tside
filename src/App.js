@@ -9,6 +9,7 @@ import Login from './components/Login/Login';
 import InventoryDetails from './components/InventoryDetails/InventoryDetails';
 import AddItem from './components/AddItem/AddItem';
 import MangeIteam from './components/MangeIteam/MangeIteam';
+import RequiireAuth from './components/RequiireAuth/RequiireAuth';
 
 function App() {
   return (
@@ -19,7 +20,9 @@ function App() {
        <Route path="/registration" element={<Register/>}></Route>
        <Route path="/login" element={<Login/>}></Route>
        <Route path="/" element={<Home/>}></Route>
-       <Route path="/add-iteam" element={<AddItem/>}></Route>
+       <Route path="/add-iteam" element={<RequiireAuth>
+        <AddItem/>
+       </RequiireAuth>}></Route>
        <Route path="/manage-iteam" element={<MangeIteam/>}></Route>
        <Route path="/inventory/:inventoryID" element={<InventoryDetails/>}></Route>
 

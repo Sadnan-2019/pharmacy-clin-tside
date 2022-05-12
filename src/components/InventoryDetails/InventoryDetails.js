@@ -15,36 +15,21 @@ const InventoryDetails = () => {
     let oldQuentity = inventory?.quantity;
     let Quentity = parseInt(oldQuentity - 1);
     console.log(Quentity);
-    if (0 > Quentity  ) {
+    if (Quentity > 0) {
       const url = `http://localhost:5000/inventory/${inventoryID}`;
-    fetch(url, {
-      method: "PUT",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify({ Quentity }),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        setInventory({ ...inventory, quantity: Quentity });
-        console.log(data);
-      });
-      alert("Are you sure for deliverd");
+      fetch(url, {
+        method: "PUT",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify({ Quentity }),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          setInventory({ ...inventory, quantity: Quentity });
+          console.log(data);
+        });
     }
-    // console.log(oldQuentity)
-    const url = `http://localhost:5000/inventory/${inventoryID}`;
-    fetch(url, {
-      method: "PUT",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify({ Quentity }),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        setInventory({ ...inventory, quantity: Quentity });
-        console.log(data);
-      });
   };
 
   const handleAddQuentity = (event) => {
@@ -53,25 +38,27 @@ const InventoryDetails = () => {
     let quentityOld = inventory?.quantity;
     // console.log(quentityOld)
     const newQuentity = parseInt(event.target.quantity.value);
+    console.log("mamama");
 
     if (newQuentity > 0) {
       quentityOld = parseInt(quentityOld) + newQuentity;
-      console.log(quentityOld)
-      // const updateQuentity = { quentityOld };
+      console.log(quentityOld);
+      const Quentity = { Quentity: quentityOld };
 
-      // const url = `http://localhost:5000/inventory/${inventoryID}`;
-      // fetch(url, {
-      //   method: "PUT",
-      //   headers: {
-      //     "content-type": "application/json",
-      //   },
-      //   body: JSON.stringify(updateQuentity),
-      // })
-      //   .then((res) => res.json())
-      //   .then((data) => {
-      //     console.log(data);
-      //     event.target.reset();
-      //   });
+      const url = `http://localhost:5000/inventory/${inventoryID}`;
+      fetch(url, {
+        method: "PUT",
+        headers: {
+          "content-type": "application/json",
+        },
+        body: JSON.stringify(Quentity),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          setInventory({ ...inventory, quantity: Quentity });
+          console.log(data);
+          event.target.reset();
+        });
     }
   };
 
@@ -82,7 +69,7 @@ const InventoryDetails = () => {
         <div className="row row-cols-1 row-cols-md-1     g-4">
           <div className="col  d-flex justify-content-center  align-items-center">
             <div className="card w-50 h-100">
-              <img  src={inventory.img} alt="..." className="p-4 w-50" />
+              <img src={inventory.img} alt="..." className="p-4 w-50" />
               <div className="card-body">
                 <h5 className="card-title">Name: {inventory.name}</h5>
                 <h6 className="card-text">Quantity: {inventory.quantity}</h6>
@@ -107,18 +94,17 @@ const InventoryDetails = () => {
             </div>
             <div className="  ms-5 bg-dark text-light   p-4  ">
               <p>If you want add quantity?Please Add</p>
-              <input
-                type="text"
-                className="form-control"
-                placeholder="Quantity"
-                name="quantity"
-              />
-              <button
-                className="btn btn-info mt-4 mb-2"
-                onClick={handleAddQuentity}
-              >
-                Add Quantity
-              </button>
+              <form onSubmit={handleAddQuentity}>
+                <input
+                  type="text"
+                  className="form-control"
+                  placeholder="Quantity"
+                  name="quantity"
+                />
+                <button className="btn btn-info mt-4 mb-2" type="submit">
+                  Add Quantity
+                </button>
+              </form>
             </div>
           </div>
         </div>
