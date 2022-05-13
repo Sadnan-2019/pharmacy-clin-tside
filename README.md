@@ -1,5 +1,41 @@
 # Getting Started with Create React App
 
+# Project Name:Pharmacy Inventory Manegment
+
+
+
+## Project Requirment
+* Use Firebase 
+
+* Use React Bootstrap
+* Use React Router
+* Showing Services
+* Use React Protected Router
+* Use React Firebase Hooks
+* Use Slider
+* Use React Toast
+* Use Reset Password hook
+
+## Project Requirment
+* Use Firebase 
+
+* Use React Bootstrap
+* Use React Router
+* Showing Invetoty Item
+* Use React Protected Router
+* Use React Firebase Hooks
+* Use Banner
+* Use React Toast
+* Use Reset Password hook
+* Use Custom  hook
+* Eivironment setup
+
+
+
+
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

@@ -17,10 +17,12 @@ const Footer = () => {
           <h6>Contact us</h6>
           <p>Mobile : 017000000</p>
           <p>Email : zero@gmail.com</p>
+
+          
         </div>
 
         <div className="  ">
-          <button className="btn btn-light">
+        <button className="btn btn-link bg-light d-block mb-2">
             <a
               href="https://play.google.com/store/apps"
               className="text-dark google"
@@ -28,8 +30,7 @@ const Footer = () => {
               <i className="fab fa-google-play google  "></i>Get on Google play
             </a>
           </button>
-          <br></br>
-          <br></br>
+         
           <button className="btn btn-light">
             <a href="https://www.apple.com/" className="text-dark google">
               <i class="fab fa-apple apple mx-1"></i>Get on Apple play

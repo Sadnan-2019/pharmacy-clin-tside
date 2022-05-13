@@ -9,7 +9,7 @@ const Banner = () => {
       <Carousel.Item interval={1000}>
           <img
             className="d-block w-100 banner"
-            src="https://images.unsplash.com/photo-1579154392128-bf8c7ebee541?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
+            src="https://i.cbc.ca/1.6095971.1625826980!/fileImage/httpImage/image.jpg_gen/derivatives/16x9_780/covid-mix-and-match-vaccines-20210618.jpg"
             alt="Third slide"
           />
           <Carousel.Caption className=" ">
@@ -20,7 +20,7 @@ const Banner = () => {
         <Carousel.Item >
           <img 
             className="d-block w-100  banner"
-            src="https://images.unsplash.com/photo-1518152006812-edab29b069ac?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
+            src="https://globalcarehospital.com/wp-content/uploads/2020/04/arredi-farmacie-min-olcdbjm9lkfarlthxu7qceilefhwmv8ravp8czhnr4-1024x512.jpg"
             alt="First slide"
           />
           <Carousel.Caption className="">
