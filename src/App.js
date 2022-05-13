@@ -12,6 +12,7 @@ import MangeIteam from './components/MangeIteam/MangeIteam';
 import RequiireAuth from './components/RequiireAuth/RequiireAuth';
 import Myitem from './components/Myitem/Myitem';
 import Blogs from './components/Blogs/Blogs';
+import { ToastContainer } from 'react-toastify';
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
      </Routes>
 
      <Footer></Footer>
+     <ToastContainer></ToastContainer>
     </div>
   );
 }

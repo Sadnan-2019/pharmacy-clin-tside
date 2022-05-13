@@ -16,10 +16,10 @@ const Header = () => {
     navigate("/login");
   };
   return (
-    <div>
+    <div  sticky="top" >
       {/* <h2>thius is hearder</h2>  */}
 
-      <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+      <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark" >
         <Container>
           <Navbar.Brand as={Link} to="/">
             <img

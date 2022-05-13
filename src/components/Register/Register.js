@@ -5,6 +5,7 @@ import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
 
 import auth from "../../firebase.init";
 import "./Register.css";
+import Loading from "../Loading/Loading";
 
 const Register = () => {
   const [createUserWithEmailAndPassword, user, loading, error] =
@@ -21,6 +22,10 @@ const Register = () => {
     event.target.reset();
     navigate("/");
   };
+
+  if(loading){
+    return <Loading></Loading>
+  }
 
   const loginNavigate = () => {
     navigate("/login");

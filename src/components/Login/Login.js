@@ -1,49 +1,72 @@
-import React from "react";
+import React, { useState } from "react";
 import { Form } from "react-bootstrap";
+import {  toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import {
   useSignInWithEmailAndPassword,
   useSignInWithGoogle,
+  useSendPasswordResetEmail,
 } from "react-firebase-hooks/auth";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+ 
 import auth from "../../firebase.init";
 import "./Login.css";
+import Loading from "../Loading/Loading";
 
 const Login = () => {
   const navigate = useNavigate();
+  const [currentEmail, setcurrentEmail] = useState("");
   let errorMessage;
-  const location = useLocation()
+  const location = useLocation();
 
   const [signInWithEmailAndPassword, user, emailloading, emailerror] =
     useSignInWithEmailAndPassword(auth);
 
-  const [signInWithGoogle, userGoogle, loading, error] = useSignInWithGoogle(auth);
+  const [sendPasswordResetEmail, sending, errorrReset] =
+    useSendPasswordResetEmail(auth);
+
+  const [signInWithGoogle, userGoogle, loading, error] =
+    useSignInWithGoogle(auth);
+
+
+    if(emailloading || sending){
+
+      return <Loading></Loading>
+    }
   if (userGoogle) {
     navigate("/");
   }
   if (error || emailerror) {
-     
-          errorMessage = <div>
+    errorMessage = (
+      <div>
         <p className="text-danger">Error : {error.message}</p>
       </div>
-     
+    );
   }
   let from = location.state?.from?.pathname || "/";
-if(user){
-  
-  // navigate("/");
-  navigate(from, { replace: true });
-
-  
-}
+  if (user) {
+    // navigate("/");
+    navigate(from, { replace: true });
+  }
 
   const loginHandler = (event) => {
     event.preventDefault();
     const email = event.target.email.value;
     const password = event.target.password.value;
-    console.log(email,password)
+    console.log(email, password);
     signInWithEmailAndPassword(email, password);
-   
-   
+  };
+
+  const handleBluremail = (event) => {
+    const email = event.target.value;
+    setcurrentEmail(email);
+  };
+  const handleForget = async () => {
+    if (currentEmail) {
+      // const email = event.current.value;
+      await sendPasswordResetEmail(currentEmail);
+      toast("send mail");
+    }
   };
 
   const registerNavigate = () => {
@@ -54,7 +77,7 @@ if(user){
       <h1 className="text-center my-4"> Login</h1>
       <div className="row g-4 my-5">
         <div className="col-md-6 col-lg-6   ">
-          <div className="p-3   text-light    bg-dark">
+          <div className="p-4   text-light rounded   bg-dark">
             <Form onSubmit={loginHandler}>
               <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label>Email address</Form.Label>
@@ -62,6 +85,7 @@ if(user){
                   type="email"
                   placeholder="Enter email"
                   name="email"
+                  onBlur={handleBluremail}
                   required
                 />
               </Form.Group>
@@ -79,12 +103,18 @@ if(user){
               <input className=" btn btn-info" type="submit" value="Login" />
             </Form>
             {errorMessage}
-            <div className="d-flex justify-content-center align-items-center">
+            <div className="d-flex justify-content-between align-items-center">
               <button
                 onClick={() => signInWithGoogle()}
                 className="btn btn-info my-2  "
               >
                 SignWithGoogle
+              </button>
+              <button
+                onClick={() => handleForget()}
+                className="btn btn-info my-2  "
+              >
+                Forget Password
               </button>
             </div>
           </div>
