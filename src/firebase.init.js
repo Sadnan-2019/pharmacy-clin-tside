@@ -6,12 +6,12 @@ import {getAuth} from "firebase/auth"
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyDAIyIP263UDHFiEV3kXAZ1xPt7KTMmsAc",
-  authDomain: "pharmacy-management-d1936.firebaseapp.com",
-  projectId: "pharmacy-management-d1936",
-  storageBucket: "pharmacy-management-d1936.appspot.com",
-  messagingSenderId: "756094668155",
-  appId: "1:756094668155:web:15fc0656178c7f327f01de"
+  apiKey:process.env.REACT_APP_apiKey,
+  authDomain:process.env.REACT_APP_authDomain,
+  projectId:process.env.REACT_APP_projectId,
+  storageBucket:process.env.REACT_APP_storageBucket,
+  messagingSenderId:process.env.REACT_APP_messagingSenderId,
+  appId:process.env.REACT_APP_appId,
 };
 
 // Initialize Firebase
