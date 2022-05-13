@@ -13,6 +13,7 @@ import RequiireAuth from './components/RequiireAuth/RequiireAuth';
 import Myitem from './components/Myitem/Myitem';
 import Blogs from './components/Blogs/Blogs';
 import { ToastContainer } from 'react-toastify';
+import Error from './components/Error/Error';
 
 function App() {
   return (
@@ -30,6 +31,8 @@ function App() {
        <Route path="/my-item" element={<RequiireAuth><Myitem/></RequiireAuth>}></Route>
        <Route path="/manage-iteam" element={<RequiireAuth><MangeIteam/></RequiireAuth>}></Route>
        <Route path="/inventory/:inventoryID" element={<RequiireAuth><InventoryDetails/></RequiireAuth>}></Route>
+       <Route path="*" element={<Error></Error>}></Route>
+       
 
        
      </Routes>
