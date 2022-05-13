@@ -20,7 +20,7 @@ const AddItem = () => {
     const product = {
       ...data,userID
     }
-    console.log(product)
+    // console.log(product)
 
     
     // console.log(data);

@@ -20,7 +20,7 @@ const Login = () => {
   if (userGoogle) {
     navigate("/");
   }
-  if (error) {
+  if (error || emailerror) {
      
           errorMessage = <div>
         <p className="text-danger">Error : {error.message}</p>

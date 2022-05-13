@@ -4,17 +4,20 @@ import { useParams } from "react-router-dom";
 const InventoryDetails = () => {
   const { inventoryID } = useParams();
   const [inventory, setInventory] = useState({});
+  const [update,setUpdate] = useState(false)
+
+
   useEffect(() => {
     const url = `http://localhost:5000/inventory/${inventoryID}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setInventory(data));
-  }, [inventoryID]);
+  }, [inventoryID,update]);
   const handleDelivered = () => {
     // console.log("ow click")
     let oldQuentity = inventory?.quantity;
     let Quentity = parseInt(oldQuentity - 1);
-    console.log(Quentity);
+    // console.log(Quentity);
     if (Quentity > 0) {
       const url = `http://localhost:5000/inventory/${inventoryID}`;
       fetch(url, {
@@ -27,7 +30,7 @@ const InventoryDetails = () => {
         .then((res) => res.json())
         .then((data) => {
           setInventory({ ...inventory, quantity: Quentity });
-          console.log(data);
+          // console.log(data);
         });
     }
   };
@@ -38,11 +41,11 @@ const InventoryDetails = () => {
     let quentityOld = inventory?.quantity;
     // console.log(quentityOld)
     const newQuentity = parseInt(event.target.quantity.value);
-    console.log("mamama");
+    // console.log("mamama");
 
     if (newQuentity > 0) {
       quentityOld = parseInt(quentityOld) + newQuentity;
-      console.log(quentityOld);
+      // console.log(quentityOld);
       const Quentity = { Quentity: quentityOld };
 
       const url = `http://localhost:5000/inventory/${inventoryID}`;
@@ -55,8 +58,9 @@ const InventoryDetails = () => {
       })
         .then((res) => res.json())
         .then((data) => {
-          setInventory({ ...inventory, quantity: Quentity });
-          console.log(data);
+          // setInventory({ ...inventory, quantity: Quentity });
+          // console.log(data);
+          setUpdate(!update)
           event.target.reset();
         });
     }
@@ -69,16 +73,16 @@ const InventoryDetails = () => {
         <div className="row row-cols-1 row-cols-md-1     g-4">
           <div className="col  d-flex justify-content-center  align-items-center">
             <div className="card w-50 h-100">
-              <img src={inventory.img} alt="..." className="p-4 w-50" />
+              <img src={inventory?.img} alt="..." className="p-4 w-50" />
               <div className="card-body">
-                <h5 className="card-title">Name: {inventory.name}</h5>
-                <h6 className="card-text">Quantity: {inventory.quantity}</h6>
-                <h6 className="card-text">Price: ${inventory.price}</h6>
+                <h5 className="card-title">Name: {inventory?.name}</h5>
+                <h6 className="card-text">Quantity: {inventory?.quantity}</h6>
+                <h6 className="card-text">Price: ${inventory?.price}</h6>
                 <h6 className="card-text">
-                  Suppliername: {inventory.suppliername}
+                  Suppliername: {inventory?.suppliername}
                 </h6>
                 <h6 className="card-text">
-                  Shortdescription: {inventory.shortdescription}
+                  Shortdescription: {inventory?.shortdescription}
                 </h6>
               </div>
               <div className="card-footer bg-dark d-flex  ">

@@ -1,11 +1,22 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Banner from '../Banner/Banner';
-import Clint from '../Clint/Clint';
+import Contuct from '../Contuct/Contuct';
 import Inventory from '../Inventory/Inventory';
+import Loading from '../Loading/Loading';
 import Team from '../Team/Team';
  
 
 const Home = () => {
+
+    const [loading]= useState()
+
+
+
+
+    if(loading){
+
+        return <Loading></Loading>
+      }
           return (
                     <div>
                     
@@ -13,7 +24,7 @@ const Home = () => {
                         <Banner></Banner>
                         <Inventory></Inventory>
                         <Team></Team>
-                        <Clint></Clint>
+                      <Contuct></Contuct>
                           
 
 

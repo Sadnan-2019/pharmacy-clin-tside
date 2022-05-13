@@ -4,7 +4,7 @@ const Team = () => {
   return (
     <div>
       <div className="container">
-        <h1 className="text-center my-4">Our Team</h1>
+        <h1 className="text-center fw-bolder py-4">Our Team</h1>
         <div class="row g-4 my-4">
         
 

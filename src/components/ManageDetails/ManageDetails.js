@@ -14,7 +14,8 @@ const ManageDetails = ({ inventorys,IteamDelete }) => {
     <div className="container">
     <div className="row">
       <div className="col-12 col-sm-12 col-md-12 col-lg-12">
-      <Table className=" responsive ">
+        <h4 className="fw-bolder text-center mt-5">Manage Item</h4>
+      <Table responsive  >
         <thead>
           <tr>
             <th>Name</th>
@@ -45,13 +46,14 @@ const ManageDetails = ({ inventorys,IteamDelete }) => {
               >
                 Update
               </button>
-              <button
+              
+            </td>
+            <td><button
                 className="btn btn-danger ms-3"
                 onClick={() => IteamDelete(inventory._id)}
               >
                 Delete
-              </button>
-            </td>
+              </button></td>
           </tr>
         ))}
       </tbody>
