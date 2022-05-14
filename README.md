@@ -1,6 +1,6 @@
 # Getting Started with Create React App
 
-# Live project :https://pharmacy-management-d1936.web.app/inventory/62802a0fec52176853400014
+# Live project Link:https://pharmacy-management-d1936.web.app/
 
 
 # Clint Side:https://github.com/ProgrammingHeroWC4/warehouse-management-client-side-Sadnan-2019
