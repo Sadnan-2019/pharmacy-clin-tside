@@ -1,6 +1,7 @@
 import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
+import { toast } from "react-toastify";
 import auth from "../../firebase.init";
 
 const AddItem = () => {
@@ -34,14 +35,14 @@ const AddItem = () => {
     })
       .then((res) => res.json())
       .then((result) => {
-        console.log(result);
+        toast("Add Sucessfully");
       });
     data.target.reset();
   };
   return (
     <div>
-      <h5 className="text-center mt-5">Add Services</h5>
-      <form onSubmit={handleSubmit(onSubmit)} className="w-50 mt-5  mx-auto">
+      <h4 className="text-center fw-bolder mt-5">Add Services</h4>
+      <form onSubmit={handleSubmit(onSubmit)} className="w-50 mt-5 bg-dark p-4 mx-auto">
         <input
           {...register("name")}
           className="form-control mt-2 mb-2"

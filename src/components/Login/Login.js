@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Form } from "react-bootstrap";
-import {  toast } from "react-toastify";
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import {
   useSignInWithEmailAndPassword,
@@ -8,7 +8,7 @@ import {
   useSendPasswordResetEmail,
 } from "react-firebase-hooks/auth";
 import { Link, useLocation, useNavigate } from "react-router-dom";
- 
+
 import auth from "../../firebase.init";
 import "./Login.css";
 import Loading from "../Loading/Loading";
@@ -28,16 +28,20 @@ const Login = () => {
 
   const [signInWithGoogle, userGoogle, loading, error] =
     useSignInWithGoogle(auth);
-
-
-    if(emailloading || sending || loading){
-
-      return <Loading></Loading>
-    }
+  // if (emailerror) {
+  //   return (
+  //     <div>
+  //       <p>Error: {error.message}</p>
+  //     </div>
+  //   );
+  // }
+  if (emailloading || sending || loading) {
+    return <Loading></Loading>;
+  }
   if (userGoogle) {
     navigate("/");
   }
-  if (error || emailerror) {
+  if (error) {
     errorMessage = (
       <div>
         <p className="text-danger">Error : {error.message}</p>
@@ -47,21 +51,23 @@ const Login = () => {
   let from = location.state?.from?.pathname || "/";
   if (user) {
     // navigate("/");
-    // navigate(from, { replace: true });
+    navigate(from, { replace: true });
   }
 
-  const loginHandler =  async(event) => {
+  const loginHandler = async (event) => {
     event.preventDefault();
     const email = event.target.email.value;
     const password = event.target.password.value;
     // console.log(email, password);
-   await signInWithEmailAndPassword(email, password);
+    await signInWithEmailAndPassword(email, password);
 
-    const {data} = await axios.post("https://radiant-reef-89107.herokuapp.com/login",{email});
-    console.log(data)
+    const { data } = await axios.post(
+      "https://radiant-reef-89107.herokuapp.com/login",
+      { email }
+    );
+    // console.log(data)
     localStorage.setItem("accessToken", data.accessToken);
     navigate(from, { replace: true });
-
   };
 
   const handleBluremail = (event) => {

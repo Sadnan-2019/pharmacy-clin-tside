@@ -72,7 +72,7 @@ const Myitem = () => {
                 <th>Price</th>
                 <th>Quantity</th>
                 <th>Short Description</th>
-                <th>Imge</th>
+                <th>Image</th>
               </tr>
             </thead>
             <tbody>
