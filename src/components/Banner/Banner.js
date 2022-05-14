@@ -6,11 +6,22 @@ const Banner = () => {
   return (
     <div>
       <Carousel className="text-dark">
-      <Carousel.Item interval={1000}>
+      <Carousel.Item interval={4000}>
           <img
             className="d-block w-100 banner"
             src="https://i.cbc.ca/1.6095971.1625826980!/fileImage/httpImage/image.jpg_gen/derivatives/16x9_780/covid-mix-and-match-vaccines-20210618.jpg"
             alt="Third slide"
+            data-aos="fade-up"
+            // data-aos-offset="500"
+            // data-aos-delay="500"
+            // data-aos-duration="1000"
+            // data-aos-easing="ease-in-out"
+            // data-aos-mirror="true"
+            // data-aos-once="false"
+            data-aos-offset="300"
+            data-aos-delay="5000"
+            data-aos-duration="3000"
+           
           />
           <Carousel.Caption className=" ">
           <h3>Our Pharmacy Manegment </h3>

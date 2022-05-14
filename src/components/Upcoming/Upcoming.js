@@ -20,9 +20,14 @@ const Upcoming = () => {
 
 
   <div className="row row-cols-1 row-cols-md-2 g-4">
-  <div className="col">
+  <div className="col  " data-aos="fade-left"
+          data-aos-offset="300"
+          data-aos-delay="5000"
+          data-aos-duration="3000"
+          data-aos-easing="ease-in-out">
     <div className="card">
-      <img src="https://www.beltmannlogistics.com/wp-content/uploads/2019/01/medical-equipment-transportation.png" className="card-img-top" alt="..."/>
+      <img src="https://www.beltmannlogistics.com/wp-content/uploads/2019/01/medical-equipment-transportation.png" 
+      className="card-img-top" alt="..."/>
      
     </div>
   </div>
@@ -38,7 +43,11 @@ const Upcoming = () => {
       
     </div>
   </div>
-  <div className="col">
+  <div className="col" data-aos="fade-left"
+          data-aos-offset="300"
+          data-aos-delay="5000"
+          data-aos-duration="3000"
+          data-aos-easing="ease-in-out">
     <div className="card">
       <img src="https://thehealthcaretechnologyreport.com/wp-content/uploads/2019/06/medical_devices.jpg" className=" card-img-top" alt="..."/>
       

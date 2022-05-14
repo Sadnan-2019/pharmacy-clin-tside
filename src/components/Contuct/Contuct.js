@@ -7,7 +7,13 @@ const Clint = () => {
         <div className="row py-5  ">
           <h1 className="text-center fw-bolder py-2">Contact us</h1>
 
-          <div className="col-lg-6 col-md-6  py-5 rounded ">
+          <div className="col-lg-6 col-md-6  py-5 rounded "
+          data-aos="fade-right"
+          data-aos-offset="300"
+          data-aos-delay="5000"
+          data-aos-duration="3000"
+          data-aos-easing="ease-in-out"
+          >
             <img src="https://tt152.files.keap.app/tt152/2799b797-d1db-4128-bbc8-af43290f881c"
              className="img-fluid  p-4 " alt="" />
           </div>

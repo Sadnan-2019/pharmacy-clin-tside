@@ -5,12 +5,12 @@ import InventoryItem from "../InventoryItem/InventoryItem";
 import Loading from "../Loading/Loading";
 
 const Inventory = () => {
-  const [inventorys,   setInventory] = useState([]);
+  const [inventorys, setInventory] = useState([]);
   const [loading, setLoading] = useState(true);
   const datas = inventorys.slice(0, 6);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/inventory`)
+    fetch(`https://radiant-reef-89107.herokuapp.com/inventory`)
       .then((res) => res.json())
       .then((data) => {
         setInventory(data);

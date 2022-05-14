@@ -12,11 +12,26 @@ const Myitem = () => {
     const getMyIteam = async () => {
       const email = user?.email;
       // console.log(email);
-      const url = `http://localhost:5000/my-inventory/${email}`;
-      const { data } = await axios.get(url);
+      const url = `https://radiant-reef-89107.herokuapp.com/my-inventory/${email}`;
+      const { data } = await axios.get(url,{
+
+
+
+        headers: {
+
+          authorization :`Bearer ${localStorage.getItem("accessToken")}`
+      
+      
+
+
+        }
+        
+      });
+      
+      
       setmyItem(data);
     };
-
+     
     getMyIteam();
   }, [user]);
 
@@ -24,7 +39,7 @@ const Myitem = () => {
     const proceed = window.confirm("Are you sure");
     //     console.log(id)
     if (proceed) {
-      const url = `http://localhost:5000/inventory/${id}`;
+      const url = `https://radiant-reef-89107.herokuapp.com/inventory/${id}`;
       fetch(url, {
         method: "DELETE",
       })
@@ -44,16 +59,12 @@ const Myitem = () => {
 
   return (
     <div>
-      
       {/* <span>W{user?.email}</span> */}
 
       <div>
-         
-
-
         <div className="container my-5">
-        <h4 className="text-center">My Iteam:{myItem.length} </h4>
-          <Table responsive >
+          <h4 className="text-center">My Iteam:{myItem.length} </h4>
+          <Table responsive>
             <thead>
               <tr>
                 <th>Email</th>
@@ -72,7 +83,9 @@ const Myitem = () => {
                   <td>{item.price}</td>
                   <td>{item.quantity}</td>
                   <td>{item.shortdescription}</td>
-                  <td><img className="w-25" src={item.img} alt=""/></td>
+                  <td>
+                    <img className="w-50" src={item.img} alt="" />
+                  </td>
                   <td className="text-end">
                     <button
                       className="btn btn-danger"

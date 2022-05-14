@@ -6,17 +6,13 @@ const Team = () => {
       <div className="container">
         <h1 className="text-center fw-bolder py-4">Our Team</h1>
         <div class="row g-4 my-4">
-        
-
           <div
             class="col-md-6 col-lg-4 text-light"
-          //   data-aos="zoom-in-up"
-          //   data-aos-offset="300"
-          //   data-aos-delay="5000"
-          //   data-aos-duration="2000"
-          //   data-aos-easing="ease-in-out"
-          //   data-aos-mirror="true"
-          //   data-aos-once="false"
+            data-aos="fade-right"
+            data-aos-offset="300"
+            data-aos-delay="5000"
+            data-aos-duration="3000"
+            data-aos-easing="ease-in-out"
           >
             <div class="p-3    bg-dark">
               <img
@@ -28,13 +24,7 @@ const Team = () => {
           </div>
           <div
             class="col-md-6 col-lg-4 text-light"
-          //   data-aos="zoom-in-up"
-          //   data-aos-offset="300"
-          //   data-aos-delay="5000"
-          //   data-aos-duration="2000"
-          //   data-aos-easing="ease-in-out"
-          //   data-aos-mirror="true"
-          //   data-aos-once="false"
+             
           >
             <div class="p-3    bg-dark">
               <img
@@ -46,13 +36,11 @@ const Team = () => {
           </div>
           <div
             class="col-md-6 col-lg-4 text-light"
-          //   data-aos="zoom-in-up"
-          //   data-aos-offset="300"
-          //   data-aos-delay="5000"
-          //   data-aos-duration="2000"
-          //   data-aos-easing="ease-in-out"
-          //   data-aos-mirror="true"
-          //   data-aos-once="false"
+            data-aos="fade-left"
+            data-aos-offset="300"
+            data-aos-delay="5000"
+            data-aos-duration="3000"
+            data-aos-easing="ease-in-out"
           >
             <div class="p-3    bg-dark">
               <img

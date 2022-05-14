@@ -6,7 +6,14 @@ const Blogs = () => {
       <div className="container">
         <div className="row">
           <h3 className="py-4 fw-bolder text-center">Answer my question</h3>
-          <div className="col-sm-12 col-md-6 col-lg-6 mt-5  text-light rounded">
+          <div
+            className="col-sm-12 col-md-6 col-lg-6 mt-5  text-light rounded"
+            data-aos="fade-right"
+            data-aos-offset="300"
+            data-aos-delay="5000"
+            data-aos-duration="3000"
+            data-aos-easing="ease-in-out"
+          >
             <div className="p-4 rounded bg-dark">
               <h3> Difference between javascript and nodejs?</h3>
 
@@ -28,8 +35,14 @@ const Blogs = () => {
               </p>
             </div>
           </div>
-          <div className="col-sm-12 col-md-6 col-lg-6 mt-5  text-light rounded">
-            <div className="p-4 rounded bg-dark">
+          <div className="col-sm-12 col-md-6 col-lg-6 mt-5  text-light rounded"
+          
+          >
+            <div className="p-4 rounded bg-dark"   data-aos="fade-left"
+          data-aos-offset="300"
+          data-aos-delay="5000"
+          data-aos-duration="3000"
+          data-aos-easing="ease-in-out">
               <h3> Differences between sql and nosql databases?</h3>
 
               <span className=" fw-bolder text-align-justify">SQL:</span>
@@ -50,7 +63,13 @@ const Blogs = () => {
             </div>
           </div>
           <div className="col-sm-12 mx-auto col-md-6 col-lg-6 mt-5  text-light rounded">
-            <div className="p-4 rounded  bg-dark">
+            <div className="p-4 rounded  bg-dark"  data-aos="zoom-in-up"
+            data-aos-offset="300"
+            data-aos-delay="5000"
+            data-aos-duration="2000"
+            data-aos-easing="ease-in-out"
+            data-aos-mirror="true"
+            data-aos-once="false">
               <h3> What is the purpose of jwt and how does it work ?</h3>
 
               <p>

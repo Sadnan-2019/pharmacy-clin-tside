@@ -37,7 +37,7 @@ const ManageDetails = ({ inventorys,IteamDelete }) => {
             <td>{inventory.suppliername}</td>
             <td>{inventory.shortdescription}</td>
             <td>
-              <img className="img-fluid w-25" src={inventory.img} alt="" />
+              <img className="img-fluid w-50" src={inventory.img} alt="" />
             </td>
             <td>
               <button

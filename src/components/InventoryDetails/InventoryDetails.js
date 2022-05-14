@@ -4,22 +4,21 @@ import { useParams } from "react-router-dom";
 const InventoryDetails = () => {
   const { inventoryID } = useParams();
   const [inventory, setInventory] = useState({});
-  const [update,setUpdate] = useState(false)
-
+  const [update, setUpdate] = useState(false);
 
   useEffect(() => {
-    const url = `http://localhost:5000/inventory/${inventoryID}`;
+    const url = `https://radiant-reef-89107.herokuapp.com/inventory/${inventoryID}`;
     fetch(url)
       .then((res) => res.json())
       .then((data) => setInventory(data));
-  }, [inventoryID,update]);
+  }, [inventoryID, update]);
   const handleDelivered = () => {
     // console.log("ow click")
     let oldQuentity = inventory?.quantity;
     let Quentity = parseInt(oldQuentity - 1);
     // console.log(Quentity);
     if (Quentity > 0) {
-      const url = `http://localhost:5000/inventory/${inventoryID}`;
+      const url = `https://radiant-reef-89107.herokuapp.com/inventory/${inventoryID}`;
       fetch(url, {
         method: "PUT",
         headers: {
@@ -48,7 +47,7 @@ const InventoryDetails = () => {
       // console.log(quentityOld);
       const Quentity = { Quentity: quentityOld };
 
-      const url = `http://localhost:5000/inventory/${inventoryID}`;
+      const url = `https://radiant-reef-89107.herokuapp.com/inventory/${inventoryID}`;
       fetch(url, {
         method: "PUT",
         headers: {
@@ -60,7 +59,7 @@ const InventoryDetails = () => {
         .then((data) => {
           // setInventory({ ...inventory, quantity: Quentity });
           // console.log(data);
-          setUpdate(!update)
+          setUpdate(!update);
           event.target.reset();
         });
     }

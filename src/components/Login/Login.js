@@ -12,6 +12,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import auth from "../../firebase.init";
 import "./Login.css";
 import Loading from "../Loading/Loading";
+import axios from "axios";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -46,15 +47,21 @@ const Login = () => {
   let from = location.state?.from?.pathname || "/";
   if (user) {
     // navigate("/");
-    navigate(from, { replace: true });
+    // navigate(from, { replace: true });
   }
 
-  const loginHandler = (event) => {
+  const loginHandler =  async(event) => {
     event.preventDefault();
     const email = event.target.email.value;
     const password = event.target.password.value;
-    console.log(email, password);
-    signInWithEmailAndPassword(email, password);
+    // console.log(email, password);
+   await signInWithEmailAndPassword(email, password);
+
+    const {data} = await axios.post("https://radiant-reef-89107.herokuapp.com/login",{email});
+    console.log(data)
+    localStorage.setItem("accessToken", data.accessToken);
+    navigate(from, { replace: true });
+
   };
 
   const handleBluremail = (event) => {

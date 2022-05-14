@@ -15,6 +15,9 @@
 * Use Reset Password hook
 * Use Custom  hook
 * Eivironment setup
+* Deploy Heroku
+* JWT
+* USE MONGODB
 
 
 

@@ -15,16 +15,16 @@ const AddItem = () => {
 
     //   current:cuRentUser
     // }
-    
+
     const userID = user?.email;
     const product = {
-      ...data,userID
-    }
+      ...data,
+      userID,
+    };
     // console.log(product)
 
-    
     // console.log(data);
-    const url = `http://localhost:5000/inventory`;
+    const url = `https://radiant-reef-89107.herokuapp.com/inventory`;
     fetch(url, {
       method: "POST",
       headers: {
