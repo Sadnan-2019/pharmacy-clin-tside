@@ -23,6 +23,7 @@ const ManageDetails = ({ inventorys,IteamDelete }) => {
             <th>Price</th>
             <th>Suppliername</th>
             <th>Shortdescription</th>
+            <th>Image</th>
           </tr>
           <tr></tr>
         </thead>
