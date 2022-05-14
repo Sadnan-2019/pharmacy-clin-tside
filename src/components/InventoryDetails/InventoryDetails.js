@@ -90,7 +90,7 @@ const InventoryDetails = () => {
                 <p className="text-light">
                   Please click the button for delivered
                 </p>
-                <br></br>
+                
 
                 <button className="btn btn-info ms-3" onClick={handleDelivered}>
                   Delivered

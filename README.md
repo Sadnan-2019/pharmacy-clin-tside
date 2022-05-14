@@ -1,5 +1,11 @@
 # Getting Started with Create React App
 
+# Live project :https://pharmacy-management-d1936.web.app/inventory/62802a0fec52176853400014
+
+
+
+# Stack overflow question link:https://stackoverflow.com/questions/72244357/how-to-find-the-cause-of-the-warning-each-child-in-a-list-should-have-a-unique
+
 # Project Name:Pharmacy Inventory Manegment
 
 
