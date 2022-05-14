@@ -5,7 +5,7 @@ import InventoryItem from "../InventoryItem/InventoryItem";
 import Loading from "../Loading/Loading";
 
 const Inventory = () => {
-  const [inventorys, setInventory] = useState([]);
+  const [inventorys,   setInventory] = useState([]);
   const [loading, setLoading] = useState(true);
   const datas = inventorys.slice(0, 6);
 

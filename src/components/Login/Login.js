@@ -29,7 +29,7 @@ const Login = () => {
     useSignInWithGoogle(auth);
 
 
-    if(emailloading || sending){
+    if(emailloading || sending || loading){
 
       return <Loading></Loading>
     }

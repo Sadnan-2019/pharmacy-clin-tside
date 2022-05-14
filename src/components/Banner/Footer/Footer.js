@@ -4,8 +4,8 @@ import "./Footer.css";
 const Footer = () => {
   return (
     <div className="footer-parent">
-      <footer className="  text-light bg-dark  mt-4 d-flex  justify-content-around  align-items-center   footer">
-        <div className="  ms-5 ">
+      <footer className="  text-light bg-dark  mt-4 d-flex justify-content-evenly   align-items-center   footer">
+        <div className="  ">
           <span className="adress">
           <h6>Office address</h6>
           <p>Zero Building 49</p>
@@ -22,7 +22,7 @@ const Footer = () => {
         </div>
 
         <div className="  ">
-        <button className="btn btn-link bg-light d-block mb-2">
+        <button className="btn btn-light d-block mb-2">
             <a
               href="https://play.google.com/store/apps"
               className="text-dark google"

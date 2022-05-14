@@ -14,6 +14,7 @@ import Myitem from './components/Myitem/Myitem';
 import Blogs from './components/Blogs/Blogs';
 import { ToastContainer } from 'react-toastify';
 import Error from './components/Error/Error';
+import Upcoming from './components/Upcoming/Upcoming';
 
 function App() {
   return (
@@ -25,6 +26,7 @@ function App() {
        <Route path="/login" element={<Login/>}></Route>
        <Route path="/" element={<Home/>}></Route>
        <Route path="/blog" element={<Blogs/>}></Route>
+       <Route path="/upcoming" element={<Upcoming/>}></Route>
        <Route path="/add-iteam" element={<RequiireAuth>
         <AddItem/>
        </RequiireAuth>}></Route>
