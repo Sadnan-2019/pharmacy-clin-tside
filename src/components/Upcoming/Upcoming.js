@@ -83,8 +83,8 @@ const Upcoming = () => {
 
               <h3 className=" ">Pharmacy Care Center</h3>
 
-              <button className="btn btn-dark my-4 rounded-pill p-2">Click more</button>
-              <button className="btn btn-dark my-4 rounded-pill ms-3 p-2">Book now</button>
+              <button className="btn btn-light fw-bolder my-4 rounded-pill p-2">Click more</button>
+              <button className="btn btn-light fw-bolder my-4 rounded-pill ms-3 p-2">Book now</button>
             </div>
           </div>
 
