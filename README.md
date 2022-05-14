@@ -3,6 +3,9 @@
 # Live project :https://pharmacy-management-d1936.web.app/inventory/62802a0fec52176853400014
 
 
+# Clint Side:https://github.com/ProgrammingHeroWC4/warehouse-management-client-side-Sadnan-2019
+
+# Server Side:https://github.com/ProgrammingHeroWC4/warehouse-management-server-side-Sadnan-2019
 
 # Stack overflow question link:https://stackoverflow.com/questions/72244357/how-to-find-the-cause-of-the-warning-each-child-in-a-list-should-have-a-unique
 
