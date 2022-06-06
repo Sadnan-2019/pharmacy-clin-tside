@@ -3,7 +3,7 @@
 # Live project Link:https://pharmacy-management-d1936.web.app/
 
 
-# Clint Side:https://github.com/ProgrammingHeroWC4/warehouse-management-client-side-Sadnan-2019
+# Clint Side:https://github.com/Sadnan-2019/pharmacy-clin-tside
 
 # Server Side:https://github.com/ProgrammingHeroWC4/warehouse-management-server-side-Sadnan-2019
 
