@@ -28,6 +28,7 @@
 * JWT
 * USE MONGODB
 * Use React hook form
+* Use Firebase Social Login
 
 
 
